@@ -9,3 +9,6 @@ The following seven (7) steps will be followed in solving the Snake Game program
 (5) Create a scoreboard
 (6) Detect snake's collission with wall; to end the Game
 (7) Detect snake's collission with its own tail to end the Game
+
+On Day 21, the remaining 4 steps (Steps 4 to 7) will be done to complete the snake game. These are summarised as:
+(4) Detect collission with food

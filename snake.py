@@ -1,8 +1,8 @@
 # Snake class that provides template for creating snake objects
 
 # Declare constant variables to hold the snake positions
-STARTING_POSITIONS = [(0,0), (-20,0),(-40,0)]
-MOVE_DISTANCE = 20
+STARTING_POSITIONS = [(0,0), (-10,0),(-20,0)]
+MOVE_DISTANCE = 10
 UP = 90
 DOWN = 270
 LEFT = 180
@@ -19,6 +19,7 @@ class Snake:
         for position in STARTING_POSITIONS:
             new_body_segment = Turtle(shape="square")
             new_body_segment.color("white")
+            new_body_segment.shapesize(stretch_len=0.5, stretch_wid= 0.5)
             new_body_segment.penup()
             new_body_segment.setposition(position)
             self.snake_body.append(new_body_segment)
