@@ -56,16 +56,11 @@ while game_is_on:
 
     # TODO 6: Detect collision with tail
     ####    if the head collides with any segment in the snake_body:
-    for part in snake.snake_body:
-        if part == snake.head:
-            pass
-        elif snake.head.distance(part) < 5:
+    for part in snake.snake_body[1:]:
+        if snake.head.distance(part) < 5:
     ####        trigger the game_over function.
             game_is_on = False
             scoreboard.game_over()
     
-
-
-
 # Set the screen to disappear only when it is clicked
 screen.exitonclick()
