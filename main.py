@@ -16,6 +16,9 @@ screen.bgcolor("black")
 # Set the title of the game
 screen.title("My Snake Game")
 
+# Creat Scoreboard
+scoreboard = Scoreboard()
+
 # Set the tracer property of the screen object to zero. This ensures that all snake body segments are drawn before they are displayed on the screen
 screen.tracer(0)
 
@@ -24,8 +27,6 @@ snake = Snake()
 
 # TODO 2: Create the food object: 
 food = Food()
-
-scoreboard = Scoreboard()
 
 screen.listen()         # Listen to key press events
 screen.onkey(fun=snake.right, key="Right")
@@ -45,14 +46,24 @@ while game_is_on:
     # TODO 4: Detect collision with food
     if snake.head.distance(food) < 10:
         food.refresh()
+        snake.extend()
         scoreboard.increase_score()
         
-    # TODO 5: Detect collission with wall
+    # TODO 5: Detect collision with wall
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 245 or snake.head.ycor() < -280:
         game_is_on = False
+        scoreboard.game_over()
 
-
-
+    # TODO 6: Detect collision with tail
+    ####    if the head collides with any segment in the snake_body:
+    for part in snake.snake_body:
+        if part == snake.head:
+            pass
+        elif snake.head.distance(part) < 5:
+    ####        trigger the game_over function.
+            game_is_on = False
+            scoreboard.game_over()
+    
 
 
 
